@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Instagram, ZoomIn } from 'lucide-react';
 
 const Gallery = () => {
@@ -75,8 +75,9 @@ const Gallery = () => {
                 src={img.src} 
                 alt={img.title}
                 onError={(e) => {
-                  e.target.onerror = null; 
-                  e.target.src = "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&q=80"
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null; 
+                  target.src = "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&q=80"
                 }}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 will-change-transform" 
               />

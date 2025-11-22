@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { MUIChip } from '../ui/MuiComponents';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { MUIButton } from '../ui/MuiComponents';
 
 const MarketingStrip = () => (

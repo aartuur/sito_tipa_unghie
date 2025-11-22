@@ -83,9 +83,10 @@ export default function DarkVeil({
   warpAmount = 0,
   resolutionScale = 1
 }) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const canvas = ref.current;
+    if (!canvas || !canvas.parentElement) return;
     const parent = canvas.parentElement;
 
     const renderer = new Renderer({

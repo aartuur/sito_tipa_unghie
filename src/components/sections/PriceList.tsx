@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Sparkles, ArrowRight } from 'lucide-react';
 import { MUIChip } from '../ui/MuiComponents';
+
 // Assicurati che il percorso di importazione sia corretto in base alla tua struttura
 // Se non hai MUIChip separato, puoi rimuovere l'import e usare un div semplice o copiare il componente qui
 
+interface PriceItem {
+  name: string;
+  price: string;
+  desc: string;
+}
+
+interface PricingData {
+  hands: PriceItem[];
+  art: PriceItem[];
+  feet: PriceItem[];
+}
+
 const PriceList = () => {
   // Definiamo il tipo per activeTab per sicurezza (opzionale in JS puro ma buona pratica)
-  const [activeTab, setActiveTab] = useState('hands');
+  const [activeTab, setActiveTab] = useState<keyof PricingData>('hands');
 
   const tabs = [
     { id: 'hands', label: 'Manicure & Gel' },
@@ -14,7 +27,7 @@ const PriceList = () => {
     { id: 'feet', label: 'Pedicure SPA' },
   ];
 
-  const pricingData = {
+  const pricingData: PricingData = {
     hands: [
       { name: "Dry Manicure (Russa)", price: "€35", desc: "Pulizia profonda cuticole, forma e lucidatura senza smalto." },
       { name: "Semipermanente Rinforzato", price: "€45", desc: "Base rubber strutturante, colore premium, top coat glass." },
@@ -60,7 +73,7 @@ const PriceList = () => {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => setActiveTab(tab.id as keyof PricingData)}
               className={`
                 whitespace-nowrap flex-shrink-0 snap-center
                 px-6 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-300 border

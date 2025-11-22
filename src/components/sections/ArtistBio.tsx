@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Award, Star, ScrollText, Instagram } from 'lucide-react';
 import { MUIButton, MUICard, MUIChip } from '../ui/MuiComponents';
 

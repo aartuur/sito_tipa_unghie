@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Atom, Menu, X } from 'lucide-react';
 
 const Navbar = () => {

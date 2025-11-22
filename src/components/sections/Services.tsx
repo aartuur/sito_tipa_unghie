@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Palette, Sparkles, Gem, Heart, ArrowRight } from 'lucide-react';
 import { MUICard } from '../ui/MuiComponents';
 

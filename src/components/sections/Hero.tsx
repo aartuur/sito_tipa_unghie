@@ -1,15 +1,11 @@
-import React from "react";
+
 import DarkVeil from "../bits/DarkVeil/FuturisticBackground";
 import Navbar from "../ui/Navbar";
 import {
   Sparkles,
   ArrowRight,
   Star,
-  ShieldCheck,
-  Zap,
-  Globe,
 } from "lucide-react";
-import CurvedLoop from "../bits/CurvedLoop/CurvedLoop";
 const Hero = () => {
   return (
     <div className="relative w-full h-screen bg-black overflow-hidden font-sans text-white selection:bg-white/20">

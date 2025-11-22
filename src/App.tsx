@@ -1,4 +1,4 @@
-import React from "react";
+
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 import Hero from './components/sections/Hero'
 
