@@ -3,5 +3,6 @@
     "env": {
       "TURBO_TELEMETRY_DISABLED": "1"
     }
-  }
+  },
+  "outputDirectory": "dist"
 }
