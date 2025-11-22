@@ -3,6 +3,13 @@ import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 import Hero from './components/sections/Hero'
 
 import Navbar from './components/ui/Navbar'
+import Services from "./components/sections/Services";
+import Experience from "./components/sections/Experience";
+import MarketingStrip from "./components/sections/MarketingStrip";
+import Footer from "./components/sections/Footer";
+import PriceList from "./components/sections/PriceList";
+import ArtistBio from "./components/sections/ArtistBio";
+import Gallery from "./components/sections/Gallery";
 const theme = createTheme({
   typography: { fontFamily: "Inter, sans-serif" },
   palette: {
@@ -15,9 +22,32 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      {/* Barra di navigazione fissa */}
       <Navbar />
-      {/* Wrapper principale con sfondo atmosferico */}
+
+      {/* Hero Section: Prima impressione impattante */}
       <Hero />
+
+      {/* Listino Prezzi: Subito chiaro per l'utente interessato */}
+      <PriceList />
+
+      {/* Servizi in evidenza: Dettagli su cosa offri */}
+      <Services />
+
+      {/* Gallery: Prova visiva della qualità */}
+      <Gallery />
+
+      {/* Artist Bio: Personal branding e fiducia */}
+      <ArtistBio />
+
+      {/* Experience/Igiene: Rassicurazione sulla sicurezza */}
+      <Experience />
+
+      {/* Striscia Marketing: Call to action finale per newsletter/sconto */}
+      <MarketingStrip />
+
+      {/* Footer: Contatti e info finali */}
+      <Footer />
     </ThemeProvider>
   );
 }

@@ -1,0 +1,41 @@
+.curved-loop-jacket {
+  width: 100%;
+  height: auto;
+  /* MOBILE: Altezza minima ridotta */
+  min-height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.curved-loop-svg {
+  width: 100%;
+  display: block;
+  /* MOBILE: Font molto più piccolo per stare nello schermo */
+  font-size: 1.8rem;
+  fill: rgba(255, 255, 255, 0.95);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  pointer-events: auto;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+}
+
+/* DESKTOP: Quando lo schermo è più largo di 768px */
+@media (min-width: 768px) {
+  .curved-loop-jacket {
+    min-height: 250px;
+  }
+  
+  .curved-loop-svg {
+    font-size: 4.5rem; /* Torna grande su desktop */
+    letter-spacing: 0.2em;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
+  }
+}
