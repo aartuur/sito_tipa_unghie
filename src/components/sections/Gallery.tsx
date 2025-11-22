@@ -73,44 +73,45 @@ const Gallery = () => {
           {/* GRID GALLERY */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {images.map((img, idx) => (
-              <div
-                key={idx}
-                className="group relative overflow-hidden rounded-2xl aspect-[3/4] cursor-pointer border border-white/5"
-              >
-                <img
-                  src={img.src}
-                  alt={img.title}
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.onerror = null;
-                    target.src =
-                      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&q=80";
-                  }}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 will-change-transform"
-                />
+              <AnimationWrapper key={idx} delay={idx * 0.1}> {/* Wrap each card with AnimationWrapper and add incremental delay */}
+                <div
+                  className="group relative overflow-hidden rounded-2xl aspect-[3/4] cursor-pointer border border-white/5"
+                >
+                  <img
+                    src={img.src}
+                    alt={img.title}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.onerror = null;
+                      target.src =
+                        "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&q=80";
+                    }}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 will-change-transform"
+                  />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
 
-                {/* Info on Hover */}
-                <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="self-start mb-3 overflow-hidden">
-                    <span className="inline-block px-3 py-1 bg-rose-500/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest rounded-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                      {img.category}
-                    </span>
-                  </div>
+                  {/* Info on Hover */}
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="self-start mb-3 overflow-hidden">
+                      <span className="inline-block px-3 py-1 bg-rose-500/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest rounded-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                        {img.category}
+                      </span>
+                    </div>
 
-                  <div className="overflow-hidden">
-                    <h3 className="text-white text-2xl font-serif font-medium transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-150">
-                      {img.title}
-                    </h3>
-                  </div>
+                    <div className="overflow-hidden">
+                      <h3 className="text-white text-2xl font-serif font-medium transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-150">
+                        {img.title}
+                      </h3>
+                    </div>
 
-                  <div className="absolute top-6 right-6 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-500 delay-200 hover:bg-white hover:text-black">
-                    <ZoomIn className="w-5 h-5" />
+                    <div className="absolute top-6 right-6 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-500 delay-200 hover:bg-white hover:text-black">
+                      <ZoomIn className="w-5 h-5" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </AnimationWrapper>
             ))}
           </div>
 

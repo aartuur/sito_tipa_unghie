@@ -69,14 +69,14 @@ const Hero = () => {
           </div>
 
           {/* COLONNA DESTRA: Immagine */}
-          <div className="relative group hidden lg:block">
+          <div className="relative group"> {/* Removed hidden lg:block */}
             <div className="absolute inset-0 bg-gradient-to-tr from-rose-500 to-purple-600 rounded-[2rem] -rotate-3 opacity-30 group-hover:-rotate-6 transition-transform duration-500"></div>
             <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070&auto=format&fit=crop" 
                 alt="Digital Art" 
-                className="w-full h-[600px] object-cover"
-              />
+                className="w-full h-[300px] sm:h-[400px] lg:h-[600px] object-cover"
+              /> {/* Adjusted height for responsiveness */}
             </div>
           </div>
         </div>

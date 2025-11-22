@@ -46,26 +46,27 @@ const Services = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, idx) => (
-              <MUICard
-                key={idx}
-                className="p-8 hover:-translate-y-2 group cursor-pointer"
-              >
-                <div className="w-14 h-14 bg-gray-800 rounded-2xl flex items-center justify-center mb-6 text-rose-400 group-hover:bg-rose-500 group-hover:text-white transition-colors duration-300 shadow-lg">
-                  <service.icon className="w-7 h-7" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                  {service.desc}
-                </p>
-                <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                  <span className="text-lg font-serif text-rose-300 font-bold">
-                    {service.price}
-                  </span>
-                  <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors" />
-                </div>
-              </MUICard>
+              <AnimationWrapper key={idx} delay={idx * 0.1}> {/* Wrap each MUICard with AnimationWrapper and add incremental delay */}
+                <MUICard
+                  className="p-8 hover:-translate-y-2 group cursor-pointer"
+                >
+                  <div className="w-14 h-14 bg-gray-800 rounded-2xl flex items-center justify-center mb-6 text-rose-400 group-hover:bg-rose-500 group-hover:text-white transition-colors duration-300 shadow-lg">
+                    <service.icon className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+                    {service.desc}
+                  </p>
+                  <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                    <span className="text-lg font-serif text-rose-300 font-bold">
+                      {service.price}
+                    </span>
+                    <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors" />
+                  </div>
+                </MUICard>
+              </AnimationWrapper>
             ))}
           </div>
         </div>

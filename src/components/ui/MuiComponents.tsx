@@ -43,7 +43,9 @@ export const MUIButton: React.FC<MUIButtonProps> = ({
         fullWidth ? "w-full" : ""
       } ${className}`}
     >
-      {children}
+      <span className="flex items-center justify-center gap-2">
+        {children}
+      </span>
     </button>
   );
 };
